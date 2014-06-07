@@ -13,5 +13,7 @@
 /composer.phar
 .idea/*
 /puphpet/puppet/modules/*
+/puphpet/files/dot/ssh/*
 !/puphpet/puppet/modules/.gitkeep
+/.vagrant/machines
 
