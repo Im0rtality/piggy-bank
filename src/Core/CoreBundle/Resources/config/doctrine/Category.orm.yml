@@ -1,0 +1,28 @@
+Core\CoreBundle\Entity\Category:
+    type: entity
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        createdAt:
+            type: datetime
+        updatedAt:
+            type: datetime
+        title:
+            type: string
+            length: 32
+    oneToMany:
+        children:
+            targetEntity: Category
+            mappedBy: parent
+    manyToOne:
+        parent:
+            targetEntity: Category
+            inversedBy: children
+        group:
+            targetEntity: Group
+            inversedBy: categories
+    lifecycleCallbacks: {  }

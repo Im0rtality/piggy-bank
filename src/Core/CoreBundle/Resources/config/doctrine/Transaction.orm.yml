@@ -1,0 +1,26 @@
+Core\CoreBundle\Entity\Transaction:
+    type: entity
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        createdAt:
+            type: datetime
+        updatedAt:
+            type: datetime
+        quantity:
+            type: float
+        currency:
+            type: string
+            length: 3
+    oneToMany:
+        user:
+            targetEntity: User
+            mappedBy: transactions
+        category:
+            targetEntity: Category
+            mappedBy: transactions
+    lifecycleCallbacks: {  }

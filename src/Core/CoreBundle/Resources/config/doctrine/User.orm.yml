@@ -1,0 +1,25 @@
+Core\CoreBundle\Entity\User:
+    type: entity
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        createdAt:
+            type: datetime
+        updatedAt:
+            type: datetime
+        email:
+            type: string
+            length: 64
+    oneToMany:
+        transactions:
+            targetEntity: Transaction
+            mappedBy: user
+    manyToOne:
+        group:
+            targetEntity: Group
+            inversedBy: users
+    lifecycleCallbacks: {  }

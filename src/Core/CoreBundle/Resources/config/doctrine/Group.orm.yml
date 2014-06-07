@@ -1,0 +1,21 @@
+Core\CoreBundle\Entity\Group:
+    type: entity
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        createdAt:
+            type: datetime
+        updatedAt:
+            type: datetime
+    oneToMany:
+        users:
+            targetEntity: User
+            mappedBy: group
+        categories:
+            targetEntity: Category
+            mappedBy: group
+    lifecycleCallbacks: {  }
