@@ -12,3 +12,6 @@
 !bin/symfony_requirements
 /composer.phar
 .idea/*
+/puphpet/puppet/modules/*
+!/puphpet/puppet/modules/.gitkeep
+
