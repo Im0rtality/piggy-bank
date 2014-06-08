@@ -1,0 +1,7 @@
+users:
+    type:     restful
+    resource: Core\ApiBundle\Controller\UserController
+
+transactions:
+    type:     restful
+    resource: Core\ApiBundle\Controller\TransactionController

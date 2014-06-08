@@ -1,6 +1,6 @@
 <?php
 
-namespace Core\CoreBundle\Routing\Annotations;
+namespace Core\ApiBundle\Routing\Annotations;
 
 /**
  * @Annotation

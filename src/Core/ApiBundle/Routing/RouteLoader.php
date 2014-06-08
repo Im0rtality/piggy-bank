@@ -1,6 +1,6 @@
 <?php
 
-namespace Core\CoreBundle\Routing;
+namespace Core\ApiBundle\Routing;
 
 use Core\CoreBundle\Routing\Annotations\RestResource;
 use Doctrine\Common\Annotations\AnnotationReader;
@@ -27,10 +27,6 @@ class RouteLoader extends Loader
      */
     public function load($resource, $type = null)
     {
-        if (true === $this->loaded) {
-            throw new \RuntimeException('Do not add the "extra" loader twice');
-        }
-
         $controller  = $resource;
         $routes      = new RouteCollection();
         $ref         = new \ReflectionClass($resource);

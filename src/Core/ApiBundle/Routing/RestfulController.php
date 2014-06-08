@@ -1,6 +1,6 @@
 <?php
 
-namespace Core\CoreBundle\Routing;
+namespace Core\ApiBundle\Routing;
 
 use Doctrine\ORM\EntityRepository;
 use JMS\Serializer\Serializer;

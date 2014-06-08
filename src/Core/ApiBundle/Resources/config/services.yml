@@ -1,0 +1,10 @@
+parameters:
+#    core_api.example.class: Core\ApiBundle\Example
+
+services:
+    core_core.routing_loader:
+        class: Core\ApiBundle\Routing\RouteLoader
+        tags:
+            - { name: routing.loader }
+        calls:
+            - [setReader, [@annotations.reader]]

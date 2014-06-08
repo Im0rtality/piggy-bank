@@ -1,6 +1,0 @@
-users:
-    type:     restful
-    resource: Core\CoreBundle\Controller\UserController
-transactions:
-    type:     restful
-    resource: Core\CoreBundle\Controller\TransactionController

@@ -1,9 +1,9 @@
 <?php
 
-namespace Core\CoreBundle\Controller;
+namespace Core\ApiBundle\Controller;
 
-use Core\CoreBundle\Routing\Annotations\RestResource;
-use Core\CoreBundle\Routing\RestfulController;
+use Core\ApiBundle\Routing\Annotations\RestResource;
+use Core\ApiBundle\Routing\RestfulController;
 
 /**
  * @RestResource(

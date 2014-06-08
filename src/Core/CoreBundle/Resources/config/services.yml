@@ -2,9 +2,3 @@ parameters:
 #    core_core.example.class: Core\CoreBundle\Example
 
 services:
-    core_core.routing_loader:
-        class: Core\CoreBundle\Routing\RouteLoader
-        tags:
-            - { name: routing.loader }
-        calls:
-            - [setReader, [@annotations.reader]]
