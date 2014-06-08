@@ -6,6 +6,9 @@ use Core\CoreBundle\Routing\Annotations\RestResource;
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Inflector\Inflector;
 use Symfony\Component\Config\Loader\Loader;
+use Symfony\Component\DependencyInjection\Container;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Config\FileLocator;
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
 
@@ -13,7 +16,6 @@ class RouteLoader extends Loader
 {
     /** @var  AnnotationReader */
     protected $reader;
-    private $loaded = false;
 
     /**
      * Loads a resource.
@@ -29,7 +31,7 @@ class RouteLoader extends Loader
             throw new \RuntimeException('Do not add the "extra" loader twice');
         }
 
-        $controller  = 'CoreCoreBundle:User';
+        $controller  = $resource;
         $routes      = new RouteCollection();
         $ref         = new \ReflectionClass($resource);
         $annotations = $this->reader->getClassAnnotations($ref, 'RestResource');
@@ -44,9 +46,6 @@ class RouteLoader extends Loader
             foreach ($routeCollection as $routeName => $route) {
                 $routes->add($routeName, $route);
             }
-
-            $this->loaded = true;
-
         }
         return $routes;
     }
@@ -103,7 +102,7 @@ class RouteLoader extends Loader
     protected function buildRoute($controller, $restResource, $action, $pattern, $requirements = [])
     {
         $defaults = [
-            '_controller' => sprintf('%s:%s', $controller, $action),
+            '_controller' => sprintf('%s::%sAction', $controller, $action),
             'resource'    => $restResource->entity,
             'offset'      => 0,
             'limit'       => 20
