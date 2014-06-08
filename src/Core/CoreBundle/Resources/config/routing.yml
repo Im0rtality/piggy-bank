@@ -1,0 +1,4 @@
+users:
+    type:     restful
+    resource: Core\CoreBundle\Controller\UserController
+

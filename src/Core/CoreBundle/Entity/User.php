@@ -3,19 +3,24 @@
 namespace Core\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use JMS\Serializer\Annotation\ExclusionPolicy;
+use JMS\Serializer\Annotation\Expose;
 /**
  * User
+ *
+ * @ExclusionPolicy("all")
  */
 class User
 {
     /**
      * @var integer
+     * @Expose
      */
     private $id;
 
     /**
      * @var \DateTime
+     * @Expose
      */
     private $createdAt;
 
@@ -26,6 +31,7 @@ class User
 
     /**
      * @var string
+     * @Expose
      */
     private $email;
 
